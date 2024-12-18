@@ -16,6 +16,12 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(params[:id])
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+    @books = Book.all
   end
 
     # 投稿データのストロングパラメータ
