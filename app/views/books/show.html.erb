@@ -1,1 +1,57 @@
-<h1>Book detail</h1>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>User info</h2>
+      ユーザーの写真
+    <tbody><tr></tr>
+    <tr>
+      <th>name</th>
+      <th>testユーザーの名前</th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th>ユーザーのイントロダクション</th>
+    </tr>
+    </tbody>
+
+    <div class="row">
+      <div class="col-10">
+        <a class="btn btn-white border border-secondary btn-block" href="<%= edit_user_path %>">
+          <i class="fa-solid fa-user-gear" style="color: #8490a3;"></i>
+        </a>
+      </div>
+    </div>
+      <h2 class="mt-3">New book</h2>
+      <%= form_with model: Book.new do |f| %>
+        <th>Title</th><br>
+        <%= f.text_field :title %>
+        
+        <th>Opinion</th>
+        <%= f.text_area :body %>
+        
+        <div class="row">
+          <div class="col-6">
+            <%= f.submit 'Create Book', class: 'btn btn-success text-white' %>
+          </div>
+        </div>
+        
+      <% end %>
+    </div>
+
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+      </div>
+    </div>
+  </div>
