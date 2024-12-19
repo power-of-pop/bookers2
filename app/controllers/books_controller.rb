@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   def new
     @book = Book.new
+    @book = Book.all
   end
 
   # 投稿データの保存
