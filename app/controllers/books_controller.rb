@@ -4,7 +4,13 @@ class BooksController < ApplicationController
     @book = Book.all
   end
 
-  # 投稿データの保存
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    flash[:notice] = "Book was successfully destroyed."
+    redirect_to '/books'
+  end
+
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id

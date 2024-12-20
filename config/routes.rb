@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     sessions: 'sessions'
   }
   resources :users, only: [:show, :edit, :index]
-  resources :books, only: [:new, :create, :index, :show, :edit]
+  resources :books, only: [:new, :create, :index, :show, :edit, :destroy]
  
   root to: "homes#top"
   get 'top', to: 'homes#top'
