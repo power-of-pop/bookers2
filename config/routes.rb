@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :users, controllers: {
     sessions: 'sessions'
-  }
+  }, as: 'another_user_session'
+
   resources :users, only: [:show, :edit, :index]
   resources :books, only: [:new, :create, :index, :show, :edit, :destroy]
  

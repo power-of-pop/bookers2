@@ -47,7 +47,7 @@
 
   <tr>
     <td>ユーザーの写真<br>ユーザーの名前</td>
-    <td><%= @book.title %></td>
+    <td><%= link_to @book.title, book_path %></td>
     <td><%= @book.body %></td>
     <td>
       <div class="row">
