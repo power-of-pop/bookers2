@@ -18,4 +18,8 @@ class User < ApplicationRecord
 
   validates :email, presence: true
 
+  validates :name, presence: true
+  validates :introduction, presence: true
+  validates :image, presence: true
+
 end

@@ -18,7 +18,7 @@ class BooksController < ApplicationController
       flash[:notice] = "You have created book successfully."
       redirect_to book_path(@book)
     else
-      render :books
+      render :index_book
     end
   end
 
@@ -43,8 +43,12 @@ class BooksController < ApplicationController
 
   def update
     book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path(book.id)
+    if book.update(book_params)
+      flash[:notice] = "You have updated user successfully."
+      redirect_to book_path(book.id)
+    else
+      render :edit_book
+    end
   end
 
     # 投稿データのストロングパラメータ
