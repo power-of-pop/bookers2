@@ -1,1 +1,27 @@
-<h1>User info</h1>
+<main>
+  <p id="notice"></p>
+  <div class="container">
+    <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h2>User info</h2>
+      
+    <%= form_with model: Book.new do |f| %>
+      <th>Name</th>
+      <%= f.text_field :name, class: 'form-control name', id: 'user_name' %>
+
+      <div class="form-group">
+      <label for="user_image">Image</label>
+      <input class="form-control-file user_image" accept="image/*" type="file" name="user[profile_image]" id="user_profile_image">
+      </div>
+      
+      <th>Introduction</th>
+      <%= text_area_tag 'user[introduction]', nil, class: 'form-control name', id: 'user_introduction' %>
+      
+      <div class="form-group">
+        <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
+      </div>
+    <% end %>
+    </div>
+    </div>
+  </div>
+</main>
