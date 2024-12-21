@@ -18,8 +18,9 @@
       <%= text_area_tag 'user[introduction]', nil, class: 'form-control name', id: 'user_introduction' %>
       
       <div class="form-group">
-        <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
+        <%= f.submit 'Update User', class: 'btn btn-secondary text-white' %>
       </div>
+
     <% end %>
     </div>
     </div>

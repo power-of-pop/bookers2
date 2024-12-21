@@ -26,6 +26,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = Book.new
     @users = @users = User.all
+    @user = User.first
   end
 
   def show
@@ -36,12 +37,12 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])
     @books = Book.all
-    # if @book.update(book_params)
-    #   flash[:notice] = "You have updated book successfully."
-    #   redirect_to book_path(@book.id)
-    # else
-    #   render :edit_book
-    # end
+  end
+
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book.id)
   end
 
     # 投稿データのストロングパラメータ
