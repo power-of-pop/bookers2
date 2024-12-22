@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @user = User.first
+    @user = current_user
   end
 
   def show
@@ -20,6 +20,8 @@ class UsersController < ApplicationController
       flash[:notice] = "You have updated user successfully."
       redirect_to user_path(@user.id)
     else
+      @user = User.find(params[:id])
+      @users = User.all
       render :edit
     end
   end
