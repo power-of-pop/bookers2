@@ -13,14 +13,14 @@
       </ul>
     <% end %>
 
-  <%= form_for(@book, method: :patch) do |f| %>
+  <%= form_with model: @book, method: :patch do |f| %>
     <div class="form-group">
       <label for="book_title">Title</label><br>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, autofocus: true, id:"inpuTitle", placeholder:"title", class: 'form-control name' %>
     </div>
     <div class="form-group">
       <label for="book_opinion">Opinion</label><br>
-      <%= f.text_area :body %>
+      <%= f.text_area :body, autofocus: true, id:"inputBody", placeholder:"body", class: 'form-control name' %>
     </div>
     <div class="form-group">
       <%= f.submit 'Update Book', class: 'btn btn-success text-white' %>
