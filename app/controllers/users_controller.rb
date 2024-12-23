@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @books = Book.where(user_id: params[:id])
+    @book = Book.find(params[:id])
     @user = User.find(params[:id])
   end
 
